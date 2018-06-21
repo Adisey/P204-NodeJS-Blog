@@ -19,7 +19,7 @@ app.use(`/api/post`, postRouter);
 app.use(express.static(clientPath));
 
 app.listen (port, () => {
-    console.log ('Сервер запущен.');
+    console.log (`Сервер запущен в ${new Date().toISOString()}`);
     console.log (`Зайти на него можно по адресу "//${host}:${port}`);
     console.log ('Остановка сервера "Crtl+C"');
 });
