@@ -1,5 +1,6 @@
 const express = require ('express');
 const mongoose = require('mongoose');
+const bodyPaser = require('body-parser')
 const path = require('path');
 const postRouter = require(`./routes/post`);
 const keys = require('./key');
@@ -13,6 +14,7 @@ mongoose.connect(keys.mongoURI)
     .catch(err => console.error(err));
 
 const app = express ();
+app.use(bodyPaser.json());
 app.use(`/api/post`, postRouter);
 app.use(express.static(clientPath));
 
